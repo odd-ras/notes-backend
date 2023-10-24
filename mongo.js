@@ -21,7 +21,7 @@ const noteSchema = new mongoose.Schema({
 const Note = mongoose.model("Note", noteSchema);
 
 const note = new Note({
-  content: "Callback-functions suck",
+  content: "Testing that the app is getting data from MongoDB Database",
   date: new Date(),
   important: true,
 });
