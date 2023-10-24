@@ -21,19 +21,21 @@ const noteSchema = new mongoose.Schema({
 const Note = mongoose.model("Note", noteSchema);
 
 const note = new Note({
-  content: "There has to be a better way of adding documents",
+  content: "Callback-functions suck",
   date: new Date(),
   important: true,
 });
 
-Note.find({}).then((result) => {
-  result.forEach((note) => {
-    console.log(note);
-  });
+/* Saving Data to MongoDB */
+note.save().then((result) => {
+  console.log("note saved!");
   mongoose.connection.close();
 });
 
-// note.save().then((result) => {
-//   console.log("note saved!");
+/* Fetching data from MongoDB */
+// Note.find({}).then((result) => {
+//   result.forEach((note) => {
+//     console.log(note);
+//   });
 //   mongoose.connection.close();
 // });
