@@ -7,7 +7,7 @@ if (process.argv.length < 3) {
 
 const password = process.argv[2];
 
-const url = `mongodb+srv://oddras:${password}@notesapp.mf4mlpx.mongodb.net/noteApp?retryWrites=true&w=majority`;
+const url = `mongodb+srv://oddras:${password}@notesapp.mf4mlpx.mongodb.net/testNoteApp?retryWrites=true&w=majority`;
 
 mongoose.set("strictQuery", false);
 mongoose.connect(url);
@@ -21,7 +21,7 @@ const noteSchema = new mongoose.Schema({
 const Note = mongoose.model("Note", noteSchema);
 
 const note = new Note({
-  content: "Testing that the app is getting data from MongoDB Database",
+  content: "Testing application using jest",
   date: new Date(),
   important: true,
 });
